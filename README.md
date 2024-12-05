@@ -4,7 +4,7 @@ Benjamín Cuello, 21.682.135-1, benjamin.cuello@alumnos.ucn.cl, Paralelo C1
 Benjamín Salas, 21.758.667-4, benjamin.salas02@alumnos.ucn.cl, Paralelo C2
 # Implementación del Algoritmo Minimax con Poda Alfa-Beta en un Juego
 
-El proyecto trata sobre la aplicacion del algoritmo Minimax con poda alfa-beta para crear un agente inteligente que tome las decisiones más optimas, utilizando el juego "Gato" tambien conocido como tres en línea" o "tic-tac-toe".
+El proyecto trata sobre la aplicacion del algoritmo `Minimax` con `Poda Alfa-Beta` para crear un agente inteligente que tome las decisiones más optimas, utilizando el juego `Gato` tambien conocido como `Tres en linea` o `Tic-Tac-Toe`.
 
 ## **Minimax**
 El algoritmo `Minimax` permite tomar decisiones óptimas en juegos de dos jugadores de suma cero. Su objetivo principal es minimizar la pérdida máxima que un jugador puede sufrir, asumiendo que el oponente juega de manera óptima.
