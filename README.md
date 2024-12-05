@@ -31,9 +31,9 @@ La **Poda Alfa-Beta** es una mejora del algoritmo Minimax que reduce el número 
 
 ### **Ventajas de la Poda Alfa-Beta:**
 - Reduce significativamente el número de nodos evaluados.
-- En el mejor caso, puede reducir la complejidad de \( O(b^d) \) a \( O(b^{d/2}) \), donde:
-  - \( b \): factor de ramificación.
-  - \( d \): profundidad del árbol.
+- En el mejor caso, puede reducir la complejidad de O(b^d) a O(b^(d/2)), donde:
+- **b:** factor de ramificación.
+- **d:** profundidad del árbol.
 
 ## Estructura del Código
 
