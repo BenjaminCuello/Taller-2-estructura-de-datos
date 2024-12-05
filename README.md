@@ -6,10 +6,19 @@ Benjamín Salas, 21.758.667-4, benjamin.salas02@alumnos.ucn.cl, Paralelo C2
 
 El proyecto trata sobre la aplicacion del algoritmo `Minimax` con `Poda Alfa-Beta` para crear un agente inteligente que tome las decisiones más optimas, utilizando el juego `Gato` tambien conocido como `Tres en linea` o `Tic-Tac-Toe`.
 
-## **Minimax**
-El algoritmo `Minimax` permite tomar decisiones óptimas en juegos de dos jugadores de suma cero. Su objetivo principal es minimizar la pérdida máxima que un jugador puede sufrir, asumiendo que el oponente juega de manera óptima.
+## **Explicación del algoritmo utilizado**
 
-### **Funcionamiento:**
+### **Minimax**
+El algoritmo `Minimax` permite tomar decisiones óptimas en juegos de dos jugadores de suma cero. Su objetivo principal es minimizar la pérdida máxima que un jugador puede sufrir, asumiendo que el oponente juega de manera óptima. Se basa en:
+
+1. **Árbol de decisiones:** Representa todos los movimientos posibles desde el estado actual del tablero.
+2. **Evaluación de estados:** Se asigna un valor a cada estado terminal:
+   - +1: Victoria del jugador Max.
+   - -1: Victoria del jugador Min.
+   - 0: Empate.
+3. **Recursión:** Se calcula el mejor valor posible alternando entre movimientos del jugador Max (maximiza) y Min (minimiza).
+
+#### **Funcionamiento:**
 1. El árbol de decisiones del juego se representa como un conjunto de estados (nodos) y movimientos posibles (ramas).
 2. Los jugadores alternan turnos:
    - **Maximización:** Trata de maximizar la puntuación.
@@ -19,11 +28,11 @@ El algoritmo `Minimax` permite tomar decisiones óptimas en juegos de dos jugado
    - Los nodos **Max** toman el valor máximo de sus hijos.
    - Los nodos **Min** toman el valor mínimo de sus hijos.
 
-## **Poda Alfa-Beta**
+### **Poda Alfa-Beta**
 
 La **Poda Alfa-Beta** es una mejora del algoritmo Minimax que reduce el número de nodos evaluados sin alterar el resultado final.
 
-### **Funcionamiento:**
+#### **Funcionamiento:**
 1. Utiliza dos límites:
    - **Alfa (α):** El mejor valor que el maximizador puede garantizar.
    - **Beta (β):** El mejor valor que el minimizador puede garantizar.
@@ -47,30 +56,32 @@ La **Poda Alfa-Beta** es una mejora del algoritmo Minimax que reduce el número 
    - **Beta (β):** Mejor resultado garantizado para el minimizador.
 3. **Poda:** Si un nodo no mejora el resultado, se deja de evaluar.
 
-## **Análisis de complejidad**
+## Análisis de Complejidad Temporal
 
-### **Sin poda alfa-beta (Minimax):**
-La complejidad temporal es \(O(b^d)\), donde:
-- **\(b\):** Número de movimientos posibles en cada turno.
-- **\(d\):** Profundidad del árbol (número de turnos hasta el final).
+### Minimax sin poda:
+- **Complejidad:** \(O(b^d)\), donde:
+  - \(b\): Número de movimientos posibles (factor de ramificación).
+  - \(d\): Profundidad del árbol de decisiones.
 
-Para el Tic-Tac-Toe:
-- **\(b \leq 9\)** (máximo número de espacios libres).
-- **\(d \leq 9\)** (máximo número de turnos).
+Para **Tic-Tac-Toe**:
+- \(b <= 9\), \(d <= 9\).
+- Nodos a evaluar en el peor caso: \(9^9 = 387,420,489\).
 
-En el peor caso, el algoritmo evaluaría \(9^9 = 387,420,489\) nodos.
+---
 
-### **Con poda alfa-beta:**
-En el mejor caso (cuando se evalúan primero las ramas más prometedoras), la complejidad se reduce a \(O(b^{d/2})\). 
+### Minimax con poda alfa-beta:
+- **Complejidad:** \(O(b^{d/2})\) en el mejor caso.
+- Nodos a evaluar en el peor caso: \(9^{9/2} \approx 31,623\).
 
-Para el Tic-Tac-Toe:
-- La evaluación máxima sería \(9^{9/2} \approx 31,623\) nodos.
+---
 
-**Comparación:**
-| **Estrategia**   | **Complejidad** | **Nodos evaluados** (aprox.) |
-|-------------------|-----------------|-----------------------------|
-| Minimax           | \(O(b^d)\)     | 387,420,489                 |
-| Poda Alfa-Beta    | \(O(b^{d/2})\) | 31,623                      |
+### Comparación:
+| **Método**          | **Complejidad**  | **Nodos evaluados** |
+|----------------------|------------------|---------------------|
+| **Minimax**          | \(O(b^d)\)      | 387,420,489         |
+| **Poda Alfa-Beta**   | \(O(b^{d/2})\)  | 31,623              |
+
+
 
 
 ## Estructura del Código
