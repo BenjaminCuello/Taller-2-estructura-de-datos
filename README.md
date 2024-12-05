@@ -6,26 +6,34 @@ Benjamín Salas, 21.758.667-4, benjamin.salas02@alumnos.ucn.cl, Paralelo C2
 
 El proyecto trata sobre la aplicacion del algoritmo Minimax con poda alfa-beta para crear un agente inteligente que tome las decisiones más optimas, utilizando el juego "Gato" tambien conocido como tres en línea" o "tic-tac-toe".
 
-## Funcionalidades
+## **Minimax**
+El algoritmo `Minimax` permite tomar decisiones óptimas en juegos de dos jugadores de suma cero. Su objetivo principal es minimizar la pérdida máxima que un jugador puede sufrir, asumiendo que el oponente juega de manera óptima.
 
-### Agregar Material a la Biblioteca
-Los usuarios pueden añadir libros y revistas con atributos específicos como título, autor, ISBN, y cada parametro en especifico de cada tipo.
+### **Funcionamiento:**
+1. El árbol de decisiones del juego se representa como un conjunto de estados (nodos) y movimientos posibles (ramas).
+2. Los jugadores alternan turnos:
+   - **Maximización:** Trata de maximizar la puntuación.
+   - **Minimización:** Trata de minimizar la puntuación.
+3. Se evalúan los valores de los nodos hoja utilizando una función de utilidad.
+4. Se realiza un recorrido **de abajo hacia arriba** en el árbol:
+   - Los nodos **Max** toman el valor máximo de sus hijos.
+   - Los nodos **Min** toman el valor mínimo de sus hijos.
 
-### Mostrar Información de los Materiales
-Se puede generar un listado detallado de todos los materiales presentes en la biblioteca.
+## **Poda Alfa-Beta**
 
-### Buscar Material
-Los usuarios pueden buscar materiales bibliográficos por título.
+La **Poda Alfa-Beta** es una mejora del algoritmo Minimax que reduce el número de nodos evaluados sin alterar el resultado final.
 
-### Préstamo y Devolución de Material
-Los usuarios pueden solicitar el préstamo de un máximo de cinco materiales a la vez, con la opción de devolverlos cuando lo deseen. El estado de los materiales se actualiza automáticamente tras cada operación.
+### **Funcionamiento:**
+1. Utiliza dos límites:
+   - **Alfa (α):** El mejor valor que el maximizador puede garantizar.
+   - **Beta (β):** El mejor valor que el minimizador puede garantizar.
+2. **Poda:** Si un nodo genera un valor que no afecta el resultado, se deja de explorar esa rama.
 
-### Gestión de Usuarios
-El sistema permite crear, buscar y eliminar usuarios. Cada usuario tiene un registro de los materiales que ha solicitado en préstamo.
-
-## Persistencia de Datos
-
-El sistema permite guardar y cargar la información de la biblioteca y los usuarios desde archivos de texto utilizando la biblioteca `fstream` para garantizar la persistencia de datos.
+### **Ventajas de la Poda Alfa-Beta:**
+- Reduce significativamente el número de nodos evaluados.
+- En el mejor caso, puede reducir la complejidad de \( O(b^d) \) a \( O(b^{d/2}) \), donde:
+  - \( b \): factor de ramificación.
+  - \( d \): profundidad del árbol.
 
 ## Estructura del Código
 
@@ -39,24 +47,5 @@ El sistema permite guardar y cargar la información de la biblioteca y los usuar
 
 Para compilar y ejecutar el programa, utiliza los siguientes comandos:
 
-- **Compilar:** g++ -o Main MaterialBibliografico.cpp Libro.cpp Revista.cpp Usuario.cpp Sistema.cpp main.cpp
-- **Ejecutar:** ./Main
-
-### Ejemplo de Objetos Creados en el `main`
-
-sistema = Sistema::getInstance(); sistema->cargarBiblioteca(); sistema->cargarUsuario();
-
-
-El objeto `sistema` de tipo `sistema` gestiona la carga de datos mediante los metodos `"cargarBiblioteca"` y `"cargarUsuarios"`.
-
-### Ejemplos Datos de Prueba
-
-En los archivos `biblioteca.txt` y `usuarios.txt` poseen datos con los que se pueden realizar las pruebas, aquí un ejemplo y su explicación.
-
-Bastian,4,0
-
-Se presenta un `usuario` llamado `Bastian` de rut `4` y `0` materiales prestados.
-
-Calculo,3,Maria,Libro,Disponible,23/7/2000,Ejercicios
-
-Se presenta un `material` llamado `Calculo` con `ISBN "3"`, de `autor "Maria"`, de `tipo "Libro"`, con `estado "Disponible"`, `creado el "23/07/2000"`, con un `resumen "Ejercicios"`.
+- **Compilar:** PONER AL FINAL AQUI
+- **Ejecutar:** AQUI TAMBIEN
