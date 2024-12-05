@@ -67,22 +67,15 @@ Para **Tic-Tac-Toe**:
 - \(b <= 9\), \(d <= 9\).
 - Nodos a evaluar en el peor caso: \(9^9 = 387,420,489\).
 
----
-
 ### Minimax con poda alfa-beta:
 - **Complejidad:** \(O(b^{d/2})\) en el mejor caso.
 - Nodos a evaluar en el peor caso: \(9^{9/2} \approx 31,623\).
-
----
 
 ### Comparación:
 | **Método**          | **Complejidad**  | **Nodos evaluados** |
 |----------------------|------------------|---------------------|
 | **Minimax**          | \(O(b^d)\)      | 387,420,489         |
 | **Poda Alfa-Beta**   | \(O(b^{d/2})\)  | 31,623              |
-
-
-
 
 ## Estructura del Código
 
