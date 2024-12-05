@@ -1,1 +1,61 @@
-# Taller-2-estructura-de-datos
+# Integrantes
+Benjamín Cuello, 21.682.135-1, benjamin.cuello@alumnos.ucn.cl, Paralelo C1 
+Benjamín Salas, 21.758.667-4, benjamin.salas02@alumnos.ucn.cl, Paralelo C2
+# Implementación del Algoritmo Minimax con Poda Alfa-Beta en un Juego
+
+El proyecto trata sobre la aplicacion del algoritmo Minimax con poda alfa-beta para crear un agente inteligente que tome las decisiones más optimas, utilizando el juego "Gato" tambien conocido como tres en línea" o "tic-tac-toe".
+
+## Funcionalidades
+
+### Agregar Material a la Biblioteca
+Los usuarios pueden añadir libros y revistas con atributos específicos como título, autor, ISBN, y cada parametro en especifico de cada tipo.
+
+### Mostrar Información de los Materiales
+Se puede generar un listado detallado de todos los materiales presentes en la biblioteca.
+
+### Buscar Material
+Los usuarios pueden buscar materiales bibliográficos por título.
+
+### Préstamo y Devolución de Material
+Los usuarios pueden solicitar el préstamo de un máximo de cinco materiales a la vez, con la opción de devolverlos cuando lo deseen. El estado de los materiales se actualiza automáticamente tras cada operación.
+
+### Gestión de Usuarios
+El sistema permite crear, buscar y eliminar usuarios. Cada usuario tiene un registro de los materiales que ha solicitado en préstamo.
+
+## Persistencia de Datos
+
+El sistema permite guardar y cargar la información de la biblioteca y los usuarios desde archivos de texto utilizando la biblioteca `fstream` para garantizar la persistencia de datos.
+
+## Estructura del Código
+
+- **Lenguaje de Programación:** C++
+- **Compilador:** g++
+- **Estructura del Código:**
+    - El código está organizado en múltiples archivos `.cpp` y `.h` para mantener una estructura modular y escalable.
+    - Uso de punteros y arrays estáticos para la gestión de la memoria dinámica.
+
+## Ejecución del Programa
+
+Para compilar y ejecutar el programa, utiliza los siguientes comandos:
+
+- **Compilar:** g++ -o Main MaterialBibliografico.cpp Libro.cpp Revista.cpp Usuario.cpp Sistema.cpp main.cpp
+- **Ejecutar:** ./Main
+
+### Ejemplo de Objetos Creados en el `main`
+
+sistema = Sistema::getInstance(); sistema->cargarBiblioteca(); sistema->cargarUsuario();
+
+
+El objeto `sistema` de tipo `sistema` gestiona la carga de datos mediante los metodos `"cargarBiblioteca"` y `"cargarUsuarios"`.
+
+### Ejemplos Datos de Prueba
+
+En los archivos `biblioteca.txt` y `usuarios.txt` poseen datos con los que se pueden realizar las pruebas, aquí un ejemplo y su explicación.
+
+Bastian,4,0
+
+Se presenta un `usuario` llamado `Bastian` de rut `4` y `0` materiales prestados.
+
+Calculo,3,Maria,Libro,Disponible,23/7/2000,Ejercicios
+
+Se presenta un `material` llamado `Calculo` con `ISBN "3"`, de `autor "Maria"`, de `tipo "Libro"`, con `estado "Disponible"`, `creado el "23/07/2000"`, con un `resumen "Ejercicios"`.
